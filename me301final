@@ -1,12 +1,30 @@
 %% Final project question 4
 % T(x,y)=(T_2-T_1)*w(x,y)+T_1
-% w(x,y)=(2/pi)*sum_odd(2/n sin(n*pi*x/L)(sinh(n*pi*y/L))/(sinh(n*pi*W/L)))
+% w(x,y,number of terms)=(2/pi)*sum_odd(2/n sin(n*pi*x/L)(sinh(n*pi*y/L))/(sinh(n*pi*W/L)))
 
 %known values
 T_1=70 %deg F
 T_2=200 %deg F
 L=2 %feet
-W=2 %feet
+W=2 feet
 
 %% part a
 % verify the terms of w become smaller as n increases; use x=y=1
+n=-1
+while error>.1
+  n=n+2
+  Wnew=w(1,1,n)
+  error=Wnew-Wold/Wold
+  Wold=Wnew
+  
+end
+
+%% part b
+% using x=y=1 find the number of terms of w needed to provide a tempature calcualtion that is within 1%
+% as in for what value of n will the addition of the next term in the series produce a change in T of less than 1%
+
+
+%% part c
+% using part b compute the temperatures in the whole plate with a spacing of .2 ft for x and y
+% for loop for x and y while loop for T
+% possibly store n for each x,y in another page 
