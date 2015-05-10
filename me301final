@@ -1,0 +1,12 @@
+%% Final project question 4
+% T(x,y)=(T_2-T_1)*w(x,y)+T_1
+% w(x,y)=(2/pi)*sum_odd(2/n sin(n*pi*x/L)(sinh(n*pi*y/L))/(sinh(n*pi*W/L)))
+
+%known values
+T_1=70 %deg F
+T_2=200 %deg F
+L=2 %feet
+W=2 %feet
+
+%% part a
+% verify the terms of w become smaller as n increases; use x=y=1
