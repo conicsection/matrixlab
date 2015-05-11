@@ -8,6 +8,16 @@ T_2=200 %deg F
 L=2 %feet
 W=2 feet
 
+function [wsum]=w(x,y,n)
+  terms=1:2:(2*n-1)
+  W=2./terms.*sin((terms.*pi.*x)/L).*(sinh((terms.*pi.*y)/L)/sinh((terms.*pi.*W)/L))
+  wsum=(2/pi).*sum(W)
+end  
+
+function [temp]=T(x,y)
+  temp=(T_2-T_1).*w(x,y)+T_1
+end
+
 %% part a
 % verify the terms of w become smaller as n increases; use x=y=1
 n=-1
